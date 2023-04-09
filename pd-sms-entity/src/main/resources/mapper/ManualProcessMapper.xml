@@ -16,7 +16,7 @@
         <result column="create_user" property="createUser"/>
         <result column="update_time" property="updateTime"/>
         <result column="update_user" property="updateUser"/>
-        <result column="is_delete" property="isDelete"/>
+        <result column="is_deleted" property="isDeleted"/>
     </resultMap>
 
 </mapper>

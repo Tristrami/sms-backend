@@ -22,7 +22,7 @@
         <result property="createUser" column="create_user"/>
         <result property="updateTime" column="update_time"/>
         <result property="updateUser" column="update_user"/>
-        <result property="isDelete" column="is_delete"/>
+        <result property="isDeleted" column="is_deleted"/>
     </resultMap>
     <select id="selectLogPage" resultType="com.itheima.sms.vo.SendLogVO">
         select sl.*,s.name as signature_name,t.name as template_name,rl.platform_name from send_log sl

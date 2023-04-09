@@ -32,7 +32,7 @@ CREATE TABLE `black_list`  (
   `create_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '创建人',
   `update_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   `update_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '修改人',
-  `is_delete` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
+  `is_deleted` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `black_list_content_type`(`type`, `content`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '黑名单' ROW_FORMAT = Dynamic;
@@ -58,7 +58,7 @@ CREATE TABLE `config`  (
   `create_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '创建人',
   `update_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   `update_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '修改人',
-  `is_delete` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
+  `is_deleted` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `config_name`(`name`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '配置表' ROW_FORMAT = Dynamic;
@@ -77,7 +77,7 @@ CREATE TABLE `config_signature`  (
   `create_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '创建人',
   `update_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   `update_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '修改人',
-  `is_delete` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
+  `is_deleted` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '配置—签名表' ROW_FORMAT = Dynamic;
 -- ----------------------------
@@ -94,7 +94,7 @@ CREATE TABLE `config_template`  (
   `create_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '创建人',
   `update_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   `update_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '修改人',
-  `is_delete` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
+  `is_deleted` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '配置—模板表' ROW_FORMAT = Dynamic;
 
@@ -115,7 +115,7 @@ CREATE TABLE `manual_process`  (
   `create_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '创建人',
   `update_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   `update_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '修改人',
-  `is_delete` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
+  `is_deleted` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '人工处理任务表' ROW_FORMAT = Dynamic;
 
@@ -137,7 +137,7 @@ CREATE TABLE `platform`  (
   `create_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '创建人',
   `update_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   `update_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '修改人',
-  `is_delete` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
+  `is_deleted` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `platform_name`(`name`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '接入平台表' ROW_FORMAT = Dynamic;
@@ -156,7 +156,7 @@ CREATE TABLE `signature`  (
   `create_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '创建人',
   `update_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   `update_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '修改人',
-  `is_delete` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
+  `is_deleted` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `signature_code`(`code`) USING BTREE,
   UNIQUE INDEX `signature_name`(`name`) USING BTREE
@@ -177,7 +177,7 @@ CREATE TABLE `template`  (
   `create_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '创建人',
   `update_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   `update_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '修改人',
-  `is_delete` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
+  `is_deleted` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `template_code`(`code`) USING BTREE,
   UNIQUE INDEX `template_name`(`name`) USING BTREE
@@ -200,7 +200,7 @@ CREATE TABLE `timing_push`  (
   `create_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '创建人',
   `update_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   `update_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '修改人',
-  `is_delete` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
+  `is_deleted` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `timing_push_status`(`status`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '定时发送' ROW_FORMAT = Dynamic;
@@ -229,7 +229,7 @@ CREATE TABLE `receive_log`  (
   `create_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '创建人',
   `update_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   `update_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '修改人',
-  `is_delete` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
+  `is_deleted` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `receive_log_api_log_id`(`api_log_id`) USING BTREE,
   INDEX `receive_log_template`(`template`) USING BTREE,
@@ -260,7 +260,7 @@ CREATE TABLE `send_log`  (
   `create_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '创建人',
   `update_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   `update_user` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '修改人',
-  `is_delete` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
+  `is_deleted` tinyint(0) NOT NULL DEFAULT 1 COMMENT '逻辑删除：0删除',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `send_log_api_log_id`(`api_log_id`) USING BTREE,
   INDEX `send_log_signature`(`signature`) USING BTREE,

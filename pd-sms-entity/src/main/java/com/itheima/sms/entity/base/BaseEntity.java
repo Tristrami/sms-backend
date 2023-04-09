@@ -30,6 +30,6 @@ public abstract class BaseEntity implements Serializable {
     private String updateUser;
 
     @ApiModelProperty(value = "逻辑删除：0删除")
-    private Integer isDelete;
+    private Integer isDeleted;
 
 }
