@@ -1,0 +1,34 @@
+version: '3.4'
+services:
+  redis-sentinel1:
+    image: redis:7.0
+    container_name: redis-sentinel1
+    command: redis-sentinel /etc/redis/sentinel.conf
+    restart: always
+    ports:
+      - 26379:26379
+    volumes:
+      - /project/sms/docker/docker-volumes/redis/sentinel-cluster/sentinel1/data/:/data/
+      - /project/sms/docker/docker-volumes/redis/sentinel-cluster/sentinel1/conf/:/etc/redis/
+
+  redis-sentinel2:
+    image: redis:7.0
+    container_name: redis-sentinel2
+    command: redis-sentinel /etc/redis/sentinel.conf
+    restart: always
+    ports:
+      - 26380:26380
+    volumes:
+      - /project/sms/docker/docker-volumes/redis/sentinel-cluster/sentinel2/data/:/data/
+      - /project/sms/docker/docker-volumes/redis/sentinel-cluster/sentinel2/conf/:/etc/redis/
+
+  redis-sentinel3:
+    image: redis:7.0
+    container_name: redis-sentinel3
+    command: redis-sentinel /etc/redis/sentinel.conf
+    restart: always
+    ports:
+      - 26381:26381
+    volumes:
+      - /project/sms/docker/docker-volumes/redis/sentinel-cluster/sentinel3/data:/data/
+      - /project/sms/docker/docker-volumes/redis/sentinel-cluster/sentinel3/conf/:/etc/redis/
